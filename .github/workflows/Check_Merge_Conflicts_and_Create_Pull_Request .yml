@@ -71,6 +71,10 @@ jobs:
         if: steps.check_pr_creation.outputs.pr_creation_flag == 'true'  
 
         # Script to run for the step
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}  # Set the GH_TOKEN environment variable with the GitHub token
+
+        # Script to run for the step
         run: |
           # Use the GitHub CLI to create a pull request
           gh pr create \
@@ -86,9 +90,6 @@ jobs:
             --head "${{ github.ref }}" \
             # Specify the repository where the pull request will be created
             --repo "${{ github.repository }}" \
-            # Provide the GitHub token for authentication
-            --token "${{ secrets.GH_TOKEN }}"
-
           # Check if the pull request creation was successful
           if [ $? -ne 0 ]; then
             # Notifies the user if pull request creation failed
