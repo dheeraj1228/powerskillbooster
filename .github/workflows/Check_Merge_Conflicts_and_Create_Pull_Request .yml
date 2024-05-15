@@ -79,7 +79,7 @@ jobs:
             # Set the commit message for the pull request
             --body "Automated pull request creation from ${{ github.ref }} branch." \
             # Specify the reviewer for the pull request
-            --reviewer "reviewer_username" \
+            --reviewer "dheeraj1228" \
             # Specify the base branch for the pull request
             --base "main" \
             # Specify the head branch for the pull request
