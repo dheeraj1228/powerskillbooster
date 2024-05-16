@@ -91,3 +91,4 @@ jobs:
             # Exit the script
             exit 1
           fi
+        # End of the script
